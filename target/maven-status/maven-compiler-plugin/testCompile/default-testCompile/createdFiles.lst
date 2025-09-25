@@ -1,0 +1,14 @@
+com\br\infnet\service\DisciplinaServiceTest.class
+com\br\infnet\controller\AlunoControllerTest.class
+com\br\infnet\controller\NotaControllerTest.class
+com\br\infnet\controller\AuthenticationControllerTest.class
+com\br\infnet\InfnetApplicationTests.class
+com\br\infnet\service\AlunoServiceTest.class
+com\br\infnet\service\MatriculaServiceTest.class
+com\br\infnet\controller\TestControllerTest.class
+com\br\infnet\controller\DisciplinaControllerTest.class
+com\br\infnet\config\AuthenticationConfigTest.class
+com\br\infnet\controller\MatriculaControllerTest.class
+com\br\infnet\service\UserServiceTest.class
+com\br\infnet\controller\RelatorioControllerTest.class
+com\br\infnet\service\NotaServiceTest.class
