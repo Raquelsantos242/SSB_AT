@@ -68,9 +68,9 @@ class AlunoServiceTest {
     @Test
     void testAtualizar() {
         Aluno atualizado = new Aluno();
-        atualizado.setNome("Joana");
+        atualizado.setNome("Rebecca");
         atualizado.setCpf("98765432100");
-        atualizado.setEmail("joana@email.com");
+        atualizado.setEmail("rebecca@email.com");
         atualizado.setTelefone("11888888888");
         atualizado.setEndereco("Rua B, 200");
 
@@ -78,7 +78,7 @@ class AlunoServiceTest {
         when(alunoRepository.save(any(Aluno.class))).thenReturn(atualizado);
 
         Aluno resultado = alunoService.atualizar(1L, atualizado);
-        assertEquals("Joana", resultado.getNome());
+        assertEquals("Rebecca", resultado.getNome());
         assertEquals("98765432100", resultado.getCpf());
     }
 

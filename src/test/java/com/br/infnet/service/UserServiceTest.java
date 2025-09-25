@@ -39,10 +39,10 @@ class UserServiceTest {
     @Test
     void testCriarUsuarioComSucesso() {
         User user = new User();
-        user.setUsername("novo");
+        user.setUsername("professor");
         user.setPassword("123");
 
-        when(userRepository.findByUsername("novo")).thenReturn(Optional.empty());
+        when(userRepository.findByUsername("professor")).thenReturn(Optional.empty());
         when(passwordEncoder.encode("123")).thenReturn("encoded123");
         when(userRepository.save(user)).thenReturn(user);
 

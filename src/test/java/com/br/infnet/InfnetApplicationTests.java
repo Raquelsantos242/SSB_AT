@@ -60,9 +60,9 @@ class InfnetApplicationTests {
 
         String alunoJson = """
                 {
-                    "nome": "João Silva",
+                    "nome": "Fulano",
                     "cpf": "12345678900",
-                    "email": "joao@teste.com",
+                    "email": "fulano@teste.com",
                     "telefone": "999999999",
                     "endereco": "Rua A, 123"
                 }
@@ -73,7 +73,7 @@ class InfnetApplicationTests {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
-        assertEquals("João Silva", response.getBody().getNome());
+        assertEquals("Fulano", response.getBody().getNome());
     }
 
     @Test

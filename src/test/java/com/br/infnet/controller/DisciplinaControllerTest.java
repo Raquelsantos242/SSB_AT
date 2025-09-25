@@ -46,8 +46,8 @@ public class DisciplinaControllerTest {
     @Test
     void criarDisciplina_sucesso() throws Exception {
         Map<String, String> disciplina = Map.of(
-                "nome", "Matemática",
-                "codigo", "MAT101"
+                "nome", "História Geral",
+                "codigo", "HIS101"
         );
 
         mockMvc.perform(post("/disciplinas")
@@ -55,8 +55,8 @@ public class DisciplinaControllerTest {
                         .content(objectMapper.writeValueAsString(disciplina))
                         .header("Authorization", "Bearer " + jwt))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("Matemática"))
-                .andExpect(jsonPath("$.codigo").value("MAT101"));
+                .andExpect(jsonPath("$.nome").value("História Geral"))
+                .andExpect(jsonPath("$.codigo").value("HIS101"));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class DisciplinaControllerTest {
 
     @Test
     void buscarDisciplinaPorId_sucesso() throws Exception {
-        Map<String, String> disciplina = Map.of("nome", "Física", "codigo", "FIS101");
+        Map<String, String> disciplina = Map.of("nome", "Geografia Política", "codigo", "GEO201");
         MvcResult result = mockMvc.perform(post("/disciplinas")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(disciplina))
@@ -83,12 +83,12 @@ public class DisciplinaControllerTest {
         mockMvc.perform(get("/disciplinas/" + id)
                         .header("Authorization", "Bearer " + jwt))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("Física"));
+                .andExpect(jsonPath("$.nome").value("Geografia Política"));
     }
 
     @Test
     void atualizarDisciplina_sucesso() throws Exception {
-        Map<String, String> disciplina = Map.of("nome", "Química", "codigo", "QUI101");
+        Map<String, String> disciplina = Map.of("nome", "Filosofia Antiga", "codigo", "FIL101");
         MvcResult result = mockMvc.perform(post("/disciplinas")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(disciplina))
@@ -98,19 +98,19 @@ public class DisciplinaControllerTest {
 
         Long id = objectMapper.readTree(result.getResponse().getContentAsString()).get("id").asLong();
 
-        Map<String, String> disciplinaAtualizada = Map.of("nome", "Química Avançada", "codigo", "QUI201");
+        Map<String, String> disciplinaAtualizada = Map.of("nome", "Filosofia Moderna", "codigo", "FIL201");
         mockMvc.perform(put("/disciplinas/" + id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(disciplinaAtualizada))
                         .header("Authorization", "Bearer " + jwt))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("Química Avançada"))
-                .andExpect(jsonPath("$.codigo").value("QUI201"));
+                .andExpect(jsonPath("$.nome").value("Filosofia Moderna"))
+                .andExpect(jsonPath("$.codigo").value("FIL201"));
     }
 
     @Test
     void deletarDisciplina_sucesso() throws Exception {
-        Map<String, String> disciplina = Map.of("nome", "Biologia", "codigo", "BIO101");
+        Map<String, String> disciplina = Map.of("nome", "Artes Visuais", "codigo", "ART101");
         MvcResult result = mockMvc.perform(post("/disciplinas")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(disciplina))

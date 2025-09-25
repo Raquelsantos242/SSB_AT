@@ -58,7 +58,7 @@ class AuthenticationControllerTest {
         RuntimeException exception = assertThrows(RuntimeException.class,
                 () -> authenticationController.authenticate(request));
 
-        assertEquals("Usuário ou senha inválidos", exception.getMessage());
+        assertEquals("Usuario ou senha inválidos", exception.getMessage());
         verify(authenticationManager, times(1))
                 .authenticate(any(UsernamePasswordAuthenticationToken.class));
         verify(authenticationService, never()).authenticate(any());

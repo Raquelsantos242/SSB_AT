@@ -133,11 +133,11 @@ public class AlunoControllerTest {
     @Test
     void deletarAluno_sucesso() throws Exception {
         Map<String, String> aluno = Map.of(
-                "nome", "Lucas",
-                "cpf", "55566677788",
-                "email", "lucas@email.com",
-                "telefone", "666666666",
-                "endereco", "Rua D, 101"
+                "nome", "Rafael",
+                "cpf", "12345678910",
+                "email", "rafael@email.com",
+                "telefone", "911111111",
+                "endereco", "Rua Carolina, 50"
         );
 
         MvcResult result = mockMvc.perform(post("/alunos")
