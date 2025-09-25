@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: infnet-springboot
+    runtime: docker
+    plan: free
+    branch: main
+    rootDir: infnet
+    envVars:
+      - key: PORT
+        value: 8080
